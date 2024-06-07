@@ -16,9 +16,13 @@ To define which file types are to be ignored whilst creating templates, please e
 
 ## How To Setup Command Line Alias
 
-To be able to run SpinUp from any folder on Mac, run the setup script. Setup scripts for Linux and Windows will come soon.
+To be able to run SpinUp from any folder on Mac, run the following setup script.
 
 	./setup_mac.sh
+
+For Linux machines, run the following setup script. Windows script will be coming soon.
+
+	./setup_linux.sh
 
 ## How To Create New Application
 
