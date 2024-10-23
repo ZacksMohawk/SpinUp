@@ -6,7 +6,7 @@ const { execSync } = require("child_process");
 const Logger = require("./includes/Logger");
 
 
-let version = "1.0.0";
+let version = "1.0.1";
 let templateType;
 let settings = {};
 let maxFolderSize = 1000000;
@@ -312,7 +312,7 @@ function setAppName(){
 function setTemplateType(){
 	let templateList = getDirectories('templates/');
 	if (templateList.length == 0){
-		Logger.log("No templates present. Please create on with 'templateme' command (see README.md)");
+		Logger.log("No templates present. Please create one with 'templateme' command (see README.md)");
 		Logger.log("Exiting");
 		process.exit(0);
 	}
@@ -356,6 +356,11 @@ function setTemplateType(){
 }
 
 function getDirectories(path){
+	if (!fs.existsSync(path)){
+		Logger.log("No templates present. Please create one with 'templateme' command (see README.md)");
+		Logger.log("Exiting");
+		process.exit(0);
+	}
 	return fs.readdirSync(path).filter(
 		function(file){
 			return fs.statSync(path + pathDivider + file).isDirectory();
