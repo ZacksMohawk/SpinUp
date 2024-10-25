@@ -1,8 +1,6 @@
 const prompt = require("prompt-sync")();
 const fs = require("fs");
 const path = require("path");
-const { exec } = require("child_process");
-const { execSync } = require("child_process");
 const Logger = require("./includes/Logger");
 
 
